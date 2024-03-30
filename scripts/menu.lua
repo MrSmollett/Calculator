@@ -21,7 +21,6 @@ function scene:create( event )
     local appName = display.newText( sceneGroup, "Калькулятор", _CX, _CY - _W+80, "assets/Fonts/MTR49__C.TTF", 96 )
         appName:setFillColor(255/255, 238/255, 168/255)
         
-
 	local function BtnPress( event )
 		local BtnName = event.target.id
 		if (event.phase == "ended") then

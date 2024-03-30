@@ -20,13 +20,13 @@ function scene:create( event )
 
     local background = display.newImage( sceneGroup, "assets/background.png", _CX, _CY, _W, _H)
     local generalForm = display.newText( sceneGroup, " Общий вид: \naх^2+bx+c=0", _CX, _H/5, Font, 24 )
-        generalForm:setFillColor(214/255, 110/255, 97/255)
+        generalForm:setFillColor(188/255, 188/255, 188/255)
     coefficientAVar = ""
     coefficientBVar = ""
     coefficientCVar = ""
 
     local solution = display.newText(sceneGroup, "D = ".."\nX1 = ".."\nХ2 = ", _CX, generalForm.y+180, Font, 20)
-        solution:setFillColor(214/255, 110/255, 97/255)
+        solution:setFillColor(188/255, 188/255, 188/255)
         solution.isVisible = false
 
     CheckVar = false
@@ -71,7 +71,7 @@ function scene:create( event )
 		local BtnName = event.target.id
 			if (BtnName == "calculateBtn" and event.phase == "ended") then
                 if ( coefficientAVar == (nil or "") or coefficientBVar == (nil or "") or coefficientCVar == (nil or "")) then
-                    solution.text = "Вы не подтвердили значение"
+                    solution.text = "Вы не подтвердили значение.\n   Нажмите клавишу \"Ввод\""
                     solution.isVisible = true
                 else
                     local D, x1, x2 = mathCalc.DiscrCalc(coefficientAVar, coefficientBVar, coefficientCVar)
@@ -102,7 +102,7 @@ function scene:create( event )
 			defaultFile = "assets/Btn/calculateBtn.png",
 			overFile = "assets/Btn/calculateBtn_.png",
 			label = "Решить",
-			labelColor = { default={ 1, 0.8, 0.5 }, over={ 0.8, 0.6, 0.3, 0.5 } },
+			labelColor = { default={ 0.73, 0.73, 0.73 }, over={ 0.63, 0.63, 0.63, 0.5 } },
             font = Font,
             fontSize=16,
 			labelAlign=center,
@@ -120,7 +120,7 @@ function scene:create( event )
 			defaultFile = "assets/Btn/exitBtn.png",
 			overFile = "assets/Btn/exitBtn_.png",
 			label = "В меню",
-			labelColor = { default={ 1, 0.8, 0 }, over={ 0.8, 0.6, 0, 0.5 } },
+			labelColor = { default={ 0.73, 0.73, 0.73 }, over={ 0.63, 0.63, 0.63, 0.5 } },
             font = Font,
             fontSize=16,
 			labelAlign = center,

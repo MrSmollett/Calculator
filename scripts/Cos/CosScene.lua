@@ -82,7 +82,7 @@ function scene:create( event )
 		local BtnName = event.target.id
 			if (BtnName == "calculateBtn" and event.phase == "ended") then
                 if ( legBVar == (nil or "") and legCVar == (nil or "") and legAVar == (nil or "") or angAVar == (nil or "") and legCVar == (nil or "") and legAVar == (nil or "") or legBVar == (nil or "") and angAVar == (nil or "") and legAVar == (nil or "") or legBVar == (nil or "") and legCVar == (nil or "") and angAVar == (nil or "")) then
-                    t = "Вы не подтвердили значение"
+                    t = "Вы не подтвердили значение.\n   Нажмите клавишу \"Ввод\""
                     out(a, b, c, t)
                 else
                     CheckVar = true
@@ -114,7 +114,7 @@ function scene:show( event )
 		    generalForm.x, generalForm.y = _CX, _H/5
 
         solution = display.newText(sceneGroup, "a = ".."\nb = ".."\nc = ", _CX, generalForm.y+300, system.nativeFont, 20)
-			solution:setFillColor(214/255, 110/255, 97/255)
+			solution:setFillColor(188/255, 188/255, 188/255)
 			solution.isVisible = false
 
             function out(a, b, c, al, cos)
@@ -136,7 +136,7 @@ function scene:show( event )
 			    defaultFile = "assets/Btn/calculateBtn.png",
 			    overFile = "assets/Btn/calculateBtn_.png",
 			    label = "Решить",
-			    labelColor = { default={ 1, 0.8, 0.5 }, over={ 0.8, 0.6, 0.3, 0.5 } },
+			    labelColor = { default={ 0.73, 0.73, 0.73 }, over={ 0.63, 0.63, 0.63, 0.5 } },
 				font = Font,
 				fontSize=16,
 			    labelAlign=center,
@@ -154,7 +154,7 @@ function scene:show( event )
 			    defaultFile = "assets/Btn/exitBtn.png",
 			    overFile = "assets/Btn/exitBtn_.png",
 			    label = "В меню",
-			    labelColor = { default={ 1, 0.8, 0 }, over={ 0.8, 0.6, 0, 0.5 } },
+			    labelColor = { default={ 0.73, 0.73, 0.73 }, over={ 0.63, 0.63, 0.63, 0.5 } },
 				font = Font,
 				fontSize=16,
 			    labelAlign = center,
